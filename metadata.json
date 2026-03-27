@@ -1,0 +1,8 @@
+{
+  "name": "Surya Photography Portfolio",
+  "description": "A premium cinematic photography portfolio with an integrated admin dashboard, Firebase Firestore, and Cloudinary storage.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

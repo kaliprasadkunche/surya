@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "Media": {
+      "title": "Media",
+      "description": "A photograph or video in the portfolio.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "url": { "type": "string" },
+        "publicId": { "type": "string" },
+        "type": { "type": "string", "enum": ["image", "video"] },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "url", "publicId", "type", "category", "createdAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A contact form submission.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "mobile": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "message", "createdAt"]
+    },
+    "Profile": {
+      "title": "Profile",
+      "description": "Photographer's profile details.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "instagram": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/media/{mediaId}": {
+      "schema": "Media",
+      "description": "Portfolio media items."
+    },
+    "/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Contact form messages."
+    },
+    "/profile/{profileId}": {
+      "schema": "Profile",
+      "description": "Photographer's profile details."
+    }
+  }
+}
